@@ -28,6 +28,7 @@ function PokeSearch() {
         // console.log(CheckTypeEffect(typeSlotOne, typeSlotTwo))
         // console.log(typeSlotOne)
         setDoTheThing(CheckTypeEffect(typeSlotOne, typeSlotTwo))
+        console.log(doTheThing)
     }
 
     return (
@@ -38,13 +39,22 @@ function PokeSearch() {
             <button onClick={TypeSearch}>Search</button>
         </form>
         <div className="results">
-            <p>{pokeName}</p>
-            <p>{pokeTypeOne}</p>
-            <p>{pokeTypeTwo}</p>
+            <p>Name: {pokeName}</p>
+            <p>First Type: {pokeTypeOne}</p>
+            <p>Second Type: {pokeTypeTwo}</p>
             <img src={pokeImg} alt="" />
         </div>
         <div>
-            {console.log(doTheThing.notEffective)}
+            <p>1/4 Damage: {doTheThing.doubleNotEffective}</p>
+            <p>4x Damage: {doTheThing.doubleSuperEffective}</p>
+            <p>No Effect: {doTheThing.noEffect}</p>
+            <p>1/2 Damage: {doTheThing.notEffective}</p>
+            <p>2x Damage: {doTheThing.superEffective}</p>
+        
+            
+            
+            
+            
 
             {/* {doTheThing["notEffective"].map(effect => (
                 <p>{effect}</p>

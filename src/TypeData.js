@@ -122,6 +122,15 @@ function CheckTypeEffect(typeOne, typeTwo = null) {
         mergedTypeEffects.doublesuperEffective = doublesuperEffectiveArray
         return mergedTypeEffects
     }
+
+    return(
+        <>
+        <div className="workpls">
+            <h1>am I here?</h1>
+        </div>
+        </>
+    )
+
    
 }
 
