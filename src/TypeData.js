@@ -1,4 +1,3 @@
-
 const typeData = {
     "normal": {
         "noEffect": ["ghost"],
@@ -104,35 +103,26 @@ function CheckTypeEffect(typeOne, typeTwo = null) {
         var { noEffect: noEffect1, notEffective: notEffective1, superEffective: superEffective1 } = firstType
         var { noEffect: noEffect2, notEffective: notEffective2, superEffective: superEffective2 } = secondType
         let mergedTypeEffects = {
-            noEffect: noEffect1.concat(noEffect2),
-            notEffective: notEffective1.concat(notEffective2),
-            superEffective: superEffective1.concat(superEffective2)
+            noEffect: noEffect1.concat(noEffect2).sort(),
+            notEffective: notEffective1.concat(notEffective2).sort(),
+            superEffective: superEffective1.concat(superEffective2).sort()
         }
         let filteredNotEffectiveArray = mergedTypeEffects.notEffective
-            .filter((type, index) => index == mergedTypeEffects.notEffective.indexOf(type))
+            .filter((type, index) => index == mergedTypeEffects.notEffective.indexOf(type)).sort()
         // console.log(filteredNotEffectiveArray)
 
         let doubleNotEffectiveArray = mergedTypeEffects.notEffective
-            .filter((type, index) => index !== mergedTypeEffects.notEffective.indexOf(type))
+            .filter((type, index) => index !== mergedTypeEffects.notEffective.indexOf(type)).sort()
 
         let doublesuperEffectiveArray = mergedTypeEffects.superEffective
-            .filter((type, index) => index !== mergedTypeEffects.superEffective.indexOf(type))
+            .filter((type, index) => index !== mergedTypeEffects.superEffective.indexOf(type)).sort()
 
         mergedTypeEffects.doubleNotEffective = doubleNotEffectiveArray
         mergedTypeEffects.doublesuperEffective = doublesuperEffectiveArray
         return mergedTypeEffects
-    }
-
-    return(
-        <>
-        <div className="workpls">
-            <h1>am I here?</h1>
-        </div>
-        </>
-    )
-
-   
+    }   
 }
 
 export default CheckTypeEffect
+
 
