@@ -7,7 +7,7 @@ function PokeSearch() {
     const [pokeImg, setPokemonImg] = useState('')
     const [pokeTypeOne, setPokemonTypeOne] = useState('')
     const [pokeTypeTwo, setPokemonTypeTwo] = useState('')
-    const [notEffective, setNotEffective] = useState([])
+    const [allTypeEffects, setAllTypeEffects] = useState([])
     let pokemonReference = React.createRef()
   
     let TypeSearch = async (event) => {
@@ -17,7 +17,6 @@ function PokeSearch() {
         const pokeData = await axios.get(`https://pokeapi.co/api/v2/pokemon/${userInput}/`)
         const pokemonName = pokeData.data.name
         const typeSlotOne = pokeData.data.types[0].type.name
-        console.log(pokemonName, "clicked")
         pokeData.data.types[1] == undefined? typeSlotTwo = null: typeSlotTwo = pokeData.data.types[1].type.name
     
         const pokemonImg = pokeData.data.sprites.other["official-artwork"].front_default
@@ -25,12 +24,9 @@ function PokeSearch() {
         setPokemonImg(pokemonImg)
         setPokemonTypeOne(typeSlotOne)
         setPokemonTypeTwo(typeSlotTwo)
-        let notEffective = CheckTypeEffect(typeSlotOne, typeSlotTwo).notEffective
-        // console.log(mergedTypeEffects)
-        setNotEffective(notEffective)
-        console.log(notEffective)
+        let allTypeEffects = CheckTypeEffect(typeSlotOne, typeSlotTwo)
+        setAllTypeEffects(allTypeEffects)
     }
-
     return (
         <>
         <form action="">
@@ -45,14 +41,32 @@ function PokeSearch() {
             <img src={pokeImg} alt="" />
         </div>
         <div>
-            {/* <p>1/4 Damage: {doThething.doubleNotEffective}</p>
-            <p>4x Damage: {doThething.doubleSuperEffective}</p>
-            <p>No Effect: {doThething.noEffect}</p> */}
-            <section>1/2 Damage:
-            {notEffective.map((effect, i) => (
+            <section className="no-effect">No Damage from: 
+                {allTypeEffects.noEffect && allTypeEffects.noEffect.map((effect, i) => (
                 <p key={i}>{effect}</p>
             ))}</section>
-            {/* <p>2x Damage: {doThething.superEffective}</p> */}
+
+            <section className="double-not-effective">1/4 Damage: 
+                {allTypeEffects.doubleNotEffective && allTypeEffects.doubleNotEffective.map((effect, i) => (
+                <p key={i}>{effect}</p>
+            ))}</section>
+
+            <section className="not-effective">1/2 Damage:
+            {allTypeEffects.notEffective && allTypeEffects.notEffective.map((effect, i) => (
+                <p key={i}>{effect}</p>
+            ))}</section>
+
+            <section className="super-effective">2x Damage: 
+                {allTypeEffects.superEffective && allTypeEffects.superEffective.map((effect, i) => (
+                <p key={i}>{effect}</p>
+            ))}</section>
+
+            <section className="double-super-effective">4x Damage: 
+                {allTypeEffects.doubleSuperEffective && allTypeEffects.doubleSuperEffective.map((effect, i) => (
+                <p key={i}>{effect}</p>
+            ))}</section>
+
+
         </div>
         </>
     )

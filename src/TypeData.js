@@ -52,7 +52,7 @@ const typeData = {
     "psychic": {
         "noEffect": [],
         "notEffective": ["fighting", "psychic"],
-        "superEffective": ["bug", "rock", "dark"]
+        "superEffective": ["bug", "dark", "ghost"]
     },
     "bug": {
         "noEffect": [],
@@ -108,20 +108,50 @@ function CheckTypeEffect(typeOne, typeTwo = null) {
             superEffective: superEffective1.concat(superEffective2).sort()
         }
         let filteredNotEffectiveArray = mergedTypeEffects.notEffective
-            .filter((type, index) => index == mergedTypeEffects.notEffective.indexOf(type)).sort()
-        // console.log(filteredNotEffectiveArray)
+            .filter((type, index) => index == mergedTypeEffects.notEffective
+            .indexOf(type))
+            .sort()
+
+        let filteredSuperEffectiveArray = mergedTypeEffects.superEffective
+            .filter((type, index) => index == mergedTypeEffects.superEffective.
+            indexOf(type))
+            .sort()        
+
 
         let doubleNotEffectiveArray = mergedTypeEffects.notEffective
             .filter((type, index) => index !== mergedTypeEffects.notEffective.indexOf(type)).sort()
 
-        let doublesuperEffectiveArray = mergedTypeEffects.superEffective
+        let doubleSuperEffectiveArray = mergedTypeEffects.superEffective
             .filter((type, index) => index !== mergedTypeEffects.superEffective.indexOf(type)).sort()
+                
+        let neutralFilteredNotEffectivness = filteredNotEffectiveArray
+            .filter(type => !mergedTypeEffects.superEffective
+            .includes(type))
 
+        let neutralFilteredSuperEffective = filteredSuperEffectiveArray
+            .filter(type => !mergedTypeEffects.notEffective
+            .includes(type))
+
+        let finalSuperEffectiveFilter = neutralFilteredSuperEffective
+            .filter(type => !doubleSuperEffectiveArray
+            .includes(type))
+
+        let finalNotEffectiveFilter = neutralFilteredNotEffectivness
+            .filter(type => !doubleNotEffectiveArray
+            .includes(type))
+        
+
+        
         mergedTypeEffects.doubleNotEffective = doubleNotEffectiveArray
-        mergedTypeEffects.doublesuperEffective = doublesuperEffectiveArray
+        mergedTypeEffects.doubleSuperEffective = doubleSuperEffectiveArray
+        mergedTypeEffects.notEffective = finalNotEffectiveFilter
+        mergedTypeEffects.superEffective = finalSuperEffectiveFilter
         return mergedTypeEffects
     }   
+
+    
 }
+// console.log(CheckTypeEffect('steel', 'psychic'))
 
 export default CheckTypeEffect
 
