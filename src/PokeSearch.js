@@ -53,7 +53,7 @@ function PokeSearch() {
                 </div>
                 <div className="type-icon-wrapper">
                     <img src={greatBall} alt="" className="type-greatball"/>
-                    <h2>{pokeTypeOne} {pokeTypeTwo}</h2>    
+                    <h1>{pokeTypeOne} {pokeTypeTwo}</h1>    
                 </div>
                 <img src={pokeImg} alt="" />
             </div>
