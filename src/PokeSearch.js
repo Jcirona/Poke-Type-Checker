@@ -19,7 +19,8 @@ function PokeSearch() {
     let TypeSearch = async (event) => {
         event.preventDefault()
         let typeSlotTwo
-        const userInput = pokemonReference.current.value
+        const userInput = pokemonReference.current.value.toLowerCase()
+        console.log(userInput)
         const pokeData = await axios.get(`https://pokeapi.co/api/v2/pokemon/${userInput}/`)
         const pokemonName = pokeData.data.name
         const typeSlotOne = pokeData.data.types[0].type.name
