@@ -1,38 +1,141 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+.header-banner {
+  background-image: url("/src/images/Poke_Header-banner_M_1200x300px.png");
+  height: 200px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.nav-bar {
+  padding: 10px;
+}
+
+body {
+  background-image: url('./images/webb-dark.png');
+  font-family: 'Cinzel', serif;
+  font-family: 'Noto Sans Symbols', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-content {
+  margin: 1rem auto 2rem;
+}
+
+.nav-bar {
+  background-image: linear-gradient(rgb(78, 78, 78), rgb(141, 141, 141));
+  text-align: center;
+  margin: 0 auto;
+}
+
+.results {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  width: 40%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.main-content {
+  background-color: white;
+  padding: 2rem;
+}
+
+.grid-container {
+  max-width: 1220px;
+}
+
+.effect-list {
+  text-align: center;
+}
+
+.no-effect {
+  border-radius: 10px;
+  border: 2px solid #cbcbcb;
+  padding: 8px;
+  background-color: #2e343624;
+}
+
+.double-not-effective {
+  border-radius: 10px;
+  border: 2px solid #7c0000b9;
+  padding: 8px;
+  background-color: #7c00008e;
+}
+
+.not-effective {
+  border-radius: 10px;
+  border: 2px solid #a401019f;
+  padding: 8px;
+  background-color: #a401013d;
+}
+
+.super-effective {
+  border-radius: 10px;
+  border: 2px solid #4d9a05;
+  padding: 8px;
+  background-color: #4d9a0552;
+}
+
+.double-super-effective {
+  border-radius: 10px;
+  border: 2px solid #73d313;
+  padding: 8px;
+  background-color: #73d31381;
+}
+
+@media only screen and (min-width: 375px) {
+  .effect-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .header-banner {
+    background-image: url("/src/images/Poke_Header-banner_M_1200x300px.png");
+    height: 200px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  img {
+    width: 40%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+@media only screen and (min-width: 768px) {
+
+  .header-banner {
+    background-image: url("images/Poke_Header-banner_D_2500x250px.png");
+    height: 250px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  
+  .effect-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+  }
+
+
+
+  .results {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  img {
+    width: 30%;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@media only screen and (min-width: 1220px) {
+  .grid-container {
+    border-radius: 5px;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

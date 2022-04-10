@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import React from 'react'
 import CheckTypeEffect from './TypeData'
+import masterball from "./images/Pokeball_icon_400px_4.png"
 function PokeSearch() {
     const [pokeName, setPokemonName] = useState('')
     const [pokeImg, setPokemonImg] = useState('')
@@ -29,45 +30,47 @@ function PokeSearch() {
     }
     return (
         <>
-        <form action="">
-            <label htmlFor="">Search: </label>
-            <input type="text" className="search-bar" ref={pokemonReference}/>
-            <button onClick={TypeSearch}>Search</button>
-        </form>
-        <div className="results">
-            <p>Name: {pokeName}</p>
-            <p>First Type: {pokeTypeOne}</p>
-            <p>Second Type: {pokeTypeTwo}</p>
-            <img src={pokeImg} alt="" />
-        </div>
-        <div>
-            <section className="no-effect">No Damage from: 
-                {allTypeEffects.noEffect && allTypeEffects.noEffect.map((effect, i) => (
-                <p key={i}>{effect}</p>
-            ))}</section>
+        <header className="header-banner"></header>
+        <nav className="nav-bar grid-container">
+            <form action="">
+                <img className='search-pokeball' src={masterball} alt="" />
+                <input type="text" className="search-bar" ref={pokemonReference} placeholder="Search"/>
+                <button onClick={TypeSearch}>Search</button>
+            </form>
+        </nav>
+        <main className="main-content grid-container">
+            <div className="results">
+                <h1>{pokeName}</h1>
+                <h2>{pokeTypeOne} {pokeTypeTwo}</h2>
+                <img src={pokeImg} alt="" />
+            </div>
+            <div className="effect-list">
+                <section className="no-effect">No Damage from: 
+                    {allTypeEffects.noEffect && allTypeEffects.noEffect.map((effect, i) => (
+                    <p key={i}>{effect}</p>
+                ))}</section>
 
-            <section className="double-not-effective">1/4 Damage: 
-                {allTypeEffects.doubleNotEffective && allTypeEffects.doubleNotEffective.map((effect, i) => (
-                <p key={i}>{effect}</p>
-            ))}</section>
+                <section className="double-not-effective">1/4 Damage: 
+                    {allTypeEffects.doubleNotEffective && allTypeEffects.doubleNotEffective.map((effect, i) => (
+                    <p key={i}>{effect}</p>
+                ))}</section>
 
-            <section className="not-effective">1/2 Damage:
-            {allTypeEffects.notEffective && allTypeEffects.notEffective.map((effect, i) => (
-                <p key={i}>{effect}</p>
-            ))}</section>
+                <section className="not-effective">1/2 Damage:
+                {allTypeEffects.notEffective && allTypeEffects.notEffective.map((effect, i) => (
+                    <p key={i}>{effect}</p>
+                ))}</section>
 
-            <section className="super-effective">2x Damage: 
-                {allTypeEffects.superEffective && allTypeEffects.superEffective.map((effect, i) => (
-                <p key={i}>{effect}</p>
-            ))}</section>
+                <section className="super-effective">2x Damage: 
+                    {allTypeEffects.superEffective && allTypeEffects.superEffective.map((effect, i) => (
+                    <p key={i}>{effect}</p>
+                ))}</section>
 
-            <section className="double-super-effective">4x Damage: 
-                {allTypeEffects.doubleSuperEffective && allTypeEffects.doubleSuperEffective.map((effect, i) => (
-                <p key={i}>{effect}</p>
-            ))}</section>
-
-
-        </div>
+                <section className="double-super-effective">4x Damage: 
+                    {allTypeEffects.doubleSuperEffective && allTypeEffects.doubleSuperEffective.map((effect, i) => (
+                    <p key={i}>{effect}</p>
+                ))}</section>
+            </div>
+        </main>
         </>
     )
     
