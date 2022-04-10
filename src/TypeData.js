@@ -108,13 +108,13 @@ function CheckTypeEffect(typeOne, typeTwo = null) {
             superEffective: superEffective1.concat(superEffective2).sort()
         }
         let filteredNotEffectiveArray = mergedTypeEffects.notEffective
-            .filter((type, index) => index == mergedTypeEffects.notEffective
+            .filter((type, index) => index === mergedTypeEffects.notEffective
             .indexOf(type))
             .sort()
 
         let filteredSuperEffectiveArray = mergedTypeEffects.superEffective
-            .filter((type, index) => index == mergedTypeEffects.superEffective.
-            indexOf(type))
+            .filter((type, index) => index === mergedTypeEffects.superEffective
+            .indexOf(type))
             .sort()        
 
 

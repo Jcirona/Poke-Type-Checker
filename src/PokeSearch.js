@@ -23,7 +23,7 @@ function PokeSearch() {
         const pokeData = await axios.get(`https://pokeapi.co/api/v2/pokemon/${userInput}/`)
         const pokemonName = pokeData.data.name
         const typeSlotOne = pokeData.data.types[0].type.name
-        pokeData.data.types[1] == undefined? typeSlotTwo = null: typeSlotTwo = pokeData.data.types[1].type.name
+        pokeData.data.types[1] === undefined? typeSlotTwo = null: typeSlotTwo = pokeData.data.types[1].type.name
     
         const pokemonImg = pokeData.data.sprites.other["official-artwork"].front_default
         setPokemonName(pokemonName)
