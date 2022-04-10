@@ -4,9 +4,7 @@
 # Try the app out here https://poketypechecker.surge.sh/
 
 # Screenshots and Layout
-![Getting Started](./wireframe_screenshots/IphoneLayout.png)
-![Getting Started](./wireframe_screenshots/IpadLayout.png)
-![Getting Started](./wireframe_screenshots/DesktopLayout.png)
+
 
 # General Approach
 - My general approach to this application was to create a very rough presentation of the final application before tackling the main logic of the program. This took a lot more time than I anticipated so once the logic was behaving correctly I moved on to the HTML and CSS portion, adding any additional changes where required. Once I was happy with the look and function of the app, it was deployed and then tested across multiple devices to ensure function and acceptable responsiveness at different screen sizes.
