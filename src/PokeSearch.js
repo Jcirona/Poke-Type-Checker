@@ -2,7 +2,12 @@ import axios from 'axios'
 import { useState } from 'react'
 import React from 'react'
 import CheckTypeEffect from './TypeData'
-import masterball from "./images/Pokeball_icon_400px_4.png"
+import pokeBall from "./images/Pokeball_icon_pokeball.png"
+import greatBall from "./images/Pokeball_icon_greatball.png"
+import ultraBall from "./images/Pokeball_icon_ultraball.png"
+import masterBall from "./images/Pokeball_icon_masterball.png"
+import footerLogo from "./images/PokeTypechecker_footer.png"
+
 function PokeSearch() {
     const [pokeName, setPokemonName] = useState('')
     const [pokeImg, setPokemonImg] = useState('')
@@ -33,15 +38,23 @@ function PokeSearch() {
         <header className="header-banner"></header>
         <nav className="nav-bar grid-container">
             <form action="">
-                <img className='search-pokeball' src={masterball} alt="" />
-                <input type="text" className="search-bar" ref={pokemonReference} placeholder="Search"/>
-                <button onClick={TypeSearch}>Search</button>
+                <div className='search-container'>
+                    <img className='search-pokeball' src={masterBall} alt="" />
+                    <input type="text" className="search-bar" ref={pokemonReference} placeholder="Search"/>
+                    <button onClick={TypeSearch}>Search</button>
+                </div>
             </form>
         </nav>
         <main className="main-content grid-container">
             <div className="results">
-                <h1>{pokeName}</h1>
-                <h2>{pokeTypeOne} {pokeTypeTwo}</h2>
+                <div className="name-icon-wrapper">
+                    <img src={pokeBall} alt="" className="name-pokeball" />
+                    <h1>{pokeName}</h1>
+                </div>
+                <div className="type-icon-wrapper">
+                    <img src={greatBall} alt="" className="type-greatball"/>
+                    <h2>{pokeTypeOne} {pokeTypeTwo}</h2>    
+                </div>
                 <img src={pokeImg} alt="" />
             </div>
             <div className="effect-list">
@@ -71,6 +84,12 @@ function PokeSearch() {
                 ))}</section>
             </div>
         </main>
+        <footer>
+            <div className="footer-banner">
+                <img src={ultraBall} alt="" className="footer-ultraball" />
+                <img src={footerLogo} alt="" className="footer-logo" />
+            </div>
+        </footer>                
         </>
     )
     

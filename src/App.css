@@ -13,6 +13,16 @@
   padding: 10px;
 }
 
+.search-pokeball {
+  margin-right: 10px;
+  width: 2rem;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   background-image: url('./images/webb-dark.png');
   font-family: 'Cinzel', serif;
@@ -22,6 +32,28 @@ body {
 
 .main-content {
   margin: 1rem auto 2rem;
+}
+
+.name-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-pokeball {
+  width: 2rem;
+  margin-right: .5rem;
+}
+
+.type-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-greatball {
+  width: 2rem;
+  margin-right: .5rem;
 }
 
 .nav-bar {
@@ -86,12 +118,38 @@ img {
   background-color: #73d31381;
 }
 
+
+
+.footer-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-ultraball {
+  width: 2rem;
+}
+
+
 @media only screen and (min-width: 375px) {
   .effect-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
+
+  .name-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+
+  .type-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 
   .header-banner {
     background-image: url("/src/images/Poke_Header-banner_M_1200x300px.png");
@@ -102,6 +160,10 @@ img {
 
   img {
     width: 40%;
+  }
+
+  .footer-ultraball {
+    width: 4rem;
   }
 }
 
@@ -114,6 +176,7 @@ img {
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
+
   
   .effect-list {
     display: grid;
