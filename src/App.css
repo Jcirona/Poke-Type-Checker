@@ -4,9 +4,10 @@
 
 .header-banner {
   background-image: url("/src/images/Poke_Header-banner_M_1200x300px.png");
-  height: 200px;
-  background-size: 100% 100%;
+  height: 100px;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .nav-bar {
@@ -153,9 +154,10 @@ img {
 
   .header-banner {
     background-image: url("/src/images/Poke_Header-banner_M_1200x300px.png");
-    height: 200px;
-    background-size: 100% 100%;
+    height: 124px;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
   }
 
   img {
@@ -172,9 +174,12 @@ img {
 
   .header-banner {
     background-image: url("images/Poke_Header-banner_D_2500x250px.png");
-    height: 250px;
-    background-size: 100% 100%;
+    height: 124px;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    max-width: 1220px;
+    margin: 0 auto;
   }
 
   
