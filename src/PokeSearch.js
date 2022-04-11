@@ -19,11 +19,12 @@ function PokeSearch() {
     let TypeSearch = async (event) => {
         event.preventDefault()
         let typeSlotTwo
+        // The API only accepts requests in all lower case so the code below takes the value from our input field and makes it lowercase so it can be correctly pass through to the API
         const userInput = pokemonReference.current.value.toLowerCase()
-        console.log(userInput)
         const pokeData = await axios.get(`https://pokeapi.co/api/v2/pokemon/${userInput}/`)
         const pokemonName = pokeData.data.name
         const typeSlotOne = pokeData.data.types[0].type.name
+        // this line below checks if a 2nd type was passed through our function. If it was then it assigns the typeSlotTwo variable.
         pokeData.data.types[1] === undefined? typeSlotTwo = null: typeSlotTwo = pokeData.data.types[1].type.name
     
         const pokemonImg = pokeData.data.sprites.other["official-artwork"].front_default
@@ -46,6 +47,7 @@ function PokeSearch() {
                 </div>
             </form>
         </nav>
+
         <main className="main-content grid-container">
             <div className="results">
                 <div className="name-icon-wrapper">
@@ -58,6 +60,7 @@ function PokeSearch() {
                 </div>
                 <img src={pokeImg} alt="" />
             </div>
+
             <div className="effect-list">
                 <section className="no-effect">No Damage from: 
                     {allTypeEffects.noEffect && allTypeEffects.noEffect.map((effect, i) => (
@@ -85,6 +88,7 @@ function PokeSearch() {
                 ))}</section>
             </div>
         </main>
+
         <footer>
             <div className="footer-banner">
                 <img src={ultraBall} alt="" className="footer-ultraball" />
