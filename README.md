@@ -4,6 +4,9 @@
 # Try the app out here https://poketypechecker.surge.sh/
 
 # Screenshots and Layout
+<img width="1792" alt="IphoneLayout" src="https://user-images.githubusercontent.com/97344617/163084350-78b5c296-d4df-48be-8a07-80d6279f3152.png">
+<img width="1792" alt="IpadLayout" src="https://user-images.githubusercontent.com/97344617/163084376-95b316ed-d372-41b3-8da4-c1484e7bb39e.png">
+<img width="1792" alt="DesktopLayout" src="https://user-images.githubusercontent.com/97344617/163084393-1406c596-a20f-461e-92ed-a49f1d73ec85.png">
 
 
 # General Approach
